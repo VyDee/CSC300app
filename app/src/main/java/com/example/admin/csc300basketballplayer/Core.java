@@ -20,12 +20,12 @@ public class Core
     public static void showPlayer (BasketballRecord br)
     {
         String name = br.getName();
-        //String age = Integer.toString(br.getAge());
-        //String jNum = Integer.toString(br.getjNum());
-        //String height_ft = Integer.toString(br.getHeight_ft());
-        //String height_in = Integer.toString(br.getHeight_in());
-       // Core.playerName[numberOfList]= name +" ("+ age +") "+ jNum + " "+ height_ft +" feet "+ height_in +" inches.";
-        Core.playerName[numberOfList]= name;
+        String age = Integer.toString(br.getAge());
+        String jNum = Integer.toString(br.getjNum());
+        String height_ft = Integer.toString(br.getHeight_ft());
+        String height_in = Integer.toString(br.getHeight_in());
+        Core.playerName[numberOfList]= name +" ("+ age +") "+ jNum + " "+ height_ft +" feet "+ height_in +" inches.";
+        //Core.playerName[numberOfList]= name;
         numberOfList++;
     }
 }

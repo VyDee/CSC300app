@@ -13,12 +13,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
+    public static ArrayList<String> listPlayers = new ArrayList<String>();
 
     private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
 
@@ -31,30 +33,28 @@ public class MainActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
         System.out.println("****** ON START!!!!!!");
-       /*
-        lv.invalidateViews();*/
 
     }
     @Override
     protected void onRestart()
     {
+
         super.onRestart();
         System.out.println("OnRESTART");
-        String[] temp = new String[1000];
-        temp[Core.numberOfList-1]=Core.playerName[Core.numberOfList-1];
-        List<String> playerList = new ArrayList<>(Arrays.asList(temp));
-        /*System.out.println(Core.numberOfList +  "bucket");
-        System.out.println(Core.playerName[Core.numberOfList-1] + " Core");
-        System.out.println(temp[Core.numberOfList-1] + "temp");
-        String[] bibleBooks = {"Matthew"};*/
+
+        //String[] temp = new String[1000];
+        //temp[Core.numberOfList-1]=Core.playerName[Core.numberOfList-1];
+
+        System.out.println(Core.playerName[Core.numberOfList-1]);
+
+        /*List<String> playerList = new ArrayList<>(Arrays.asList(temp));
+
         ArrayAdapter<String> aa = new ArrayAdapter<String>(this, R.layout.list_view_row,playerList );
         ListView lv = (ListView)this.findViewById(R.id.listView);
 
         lv.setAdapter(aa);
 
-        lv.invalidateViews();
-
-
+        lv.invalidateViews();*/
 
         /*BasketballRecord[] playerList = Core.basketballPlayer;
         System.out.println( playerList[0]);
@@ -62,6 +62,12 @@ public class MainActivity extends AppCompatActivity
         ListView lv = (ListView)this.findViewById(R.id.listView);
         lv.setAdapter(aa);
         //lv.invalidateViews();*/
+
+        ListView lv = (ListView) this.findViewById(R.id.listView);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.list_view_row,listPlayers);
+        lv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        lv.invalidate();
 
     }
     public void onAddPlayerPressed(View v)
