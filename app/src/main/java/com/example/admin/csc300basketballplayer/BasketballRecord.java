@@ -6,10 +6,10 @@ public class BasketballRecord
     private String name;
     private int jNum;
     private int age;
-    private float height_ft;
-    private float height_in;
+    private int height_ft;
+    private int height_in;
 
-    public BasketballRecord(String name, int jNum, int age, float height_ft, float height_in)
+    public BasketballRecord(String name, int jNum, int age, int height_ft, int height_in)
     {
         this.name = name;
         this.jNum = jNum;
@@ -39,12 +39,12 @@ public class BasketballRecord
         return age;
     }
 
-    public float getHeight_ft()
+    public int getHeight_ft()
     {
         return height_ft;
     }
 
-    public float getHeight_in()
+    public int getHeight_in()
     {
         return height_in;
     }
