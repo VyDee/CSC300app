@@ -24,7 +24,7 @@ public class Core
         String jNum = Integer.toString(br.getjNum());
         String height_ft = Integer.toString(br.getHeight_ft());
         String height_in = Integer.toString(br.getHeight_in());
-        Core.playerName[numberOfList]= name +" ("+ age +") "+ jNum + " "+ height_ft +" feet "+ height_in +" inches.";
+        Core.playerName[numberOfList]= name +" ("+ age +") has jersey number "+ jNum + " - "+ height_ft +" feet "+ height_in +" inches.";
         //Core.playerName[numberOfList]= name;
         numberOfList++;
     }
