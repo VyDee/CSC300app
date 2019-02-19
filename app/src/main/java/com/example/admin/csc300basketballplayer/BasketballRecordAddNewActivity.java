@@ -74,9 +74,7 @@ public class BasketballRecordAddNewActivity extends AppCompatActivity {
         BasketballRecord br = new BasketballRecord(name,jNum,age,height_ft,height_in);
 
         //Core.addBasketballPlayer(br);
-        Core.showPlayer(br);
-        MainActivity.listPlayers.add(Core.playerName[Core.numberOfList-1]);
-
+        Core.addBasketballPlayer(br);
 
 
         this.finish();

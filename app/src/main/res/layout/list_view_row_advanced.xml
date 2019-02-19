@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vy" />
+
+    <TextView
+        android:id="@+id/ageTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Age 19" />
+
+    <TextView
+        android:id="@+id/jNumTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jersey 9" />
+
+    <TextView
+        android:id="@+id/height_ftTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5 feet" />
+
+    <TextView
+        android:id="@+id/height_inTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3 inches" />
+</android.widget.LinearLayout>

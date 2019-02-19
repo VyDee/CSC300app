@@ -13,16 +13,26 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    public static ArrayList<String> listPlayers = new ArrayList<String>();
 
-    private ListView listView;
+
+    private ListView lv;
+    private BasketballPlayerAdapter aa;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        // initializes the array of Strings so there are place holder strings in there
+        for (int i = 0; i<Core.basketballPlayer.length; i ++)
+        {
+            Core.basketballPlayer[i] = new BasketballRecord();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        this.aa = new BasketballPlayerAdapter(this, R.layout.list_view_row_advanced,
+                Core.basketballPlayer);
+        this.lv = (ListView)this.findViewById(R.id.listView);
+        this.lv.setAdapter(aa);
 
 
 
@@ -41,33 +51,7 @@ public class MainActivity extends AppCompatActivity
 
         super.onRestart();
         System.out.println("OnRESTART");
-
-        //String[] temp = new String[1000];
-        //temp[Core.numberOfList-1]=Core.playerName[Core.numberOfList-1];
-
-        System.out.println(Core.playerName[Core.numberOfList-1]);
-
-        /*List<String> playerList = new ArrayList<>(Arrays.asList(temp));
-
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this, R.layout.list_view_row,playerList );
-        ListView lv = (ListView)this.findViewById(R.id.listView);
-
-        lv.setAdapter(aa);
-
-        lv.invalidateViews();*/
-
-        /*BasketballRecord[] playerList = Core.basketballPlayer;
-        System.out.println( playerList[0]);
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this, R.layout.list_view_row,temp);
-        ListView lv = (ListView)this.findViewById(R.id.listView);
-        lv.setAdapter(aa);
-        //lv.invalidateViews();*/
-
-        ListView lv = (ListView) this.findViewById(R.id.listView);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.list_view_row,listPlayers);
-        lv.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-        lv.invalidate();
+        this.aa.notifyDataSetChanged();
 
     }
     public void onAddPlayerPressed(View v)
@@ -75,6 +59,11 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this,BasketballRecordAddNewActivity.class);
         this.startActivity(i);
     }
+
+
+
+
+
 
 
 
