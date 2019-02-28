@@ -18,8 +18,8 @@ public class BasketballPlayerAdapter extends ArrayAdapter
     public BasketballPlayerAdapter(Context context, int textViewResourceId, BasketballRecord[] list)
     {
         super(context,textViewResourceId,list);
-        mContext = context;
-        basketballRecordList = list;
+        this.mContext = context;
+        this.basketballRecordList = list;
         this.textViewResourceId = textViewResourceId;
     }
 

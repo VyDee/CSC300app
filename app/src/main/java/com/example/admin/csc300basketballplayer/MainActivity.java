@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,10 +25,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         // initializes the array of Strings so there are place holder strings in there
-        for (int i = 0; i<Core.basketballPlayer.length; i ++)
+        for (int i = 0; i < Core.basketballPlayer.length; i++)
         {
             Core.basketballPlayer[i] = new BasketballRecord();
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity
                 Core.basketballPlayer);
         this.lv = (ListView)this.findViewById(R.id.listView);
         this.lv.setAdapter(aa);
+
+        //Start Listening for changes to the database
+        Core.listenForDatabaseChanges(); // non-blocking!!!
 
 
 
