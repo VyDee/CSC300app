@@ -22,39 +22,6 @@ public class BasketballRecordAddNewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_basketball_record_add_new);
     }
 
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        System.out.println("****** ON RESUME   2!!!!!!");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        System.out.println("****** ON START   2!!!!!!");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        System.out.println("****** ON PAUSE   2!!!!!!");
-
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("****** ON STOP   2!!!!!!");
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        System.out.println("****** ON RESTART   2!!!!!!");
-
-    }
 
     public void addNewBasketball(View v)
     {
@@ -70,16 +37,12 @@ public class BasketballRecordAddNewActivity extends AppCompatActivity {
         int height_ft =Integer.parseInt(height_ftET.getText().toString());
         int height_in =Integer.parseInt(height_inET.getText().toString());
 
-
         BasketballRecord br = new BasketballRecord(name,jNum,age,height_ft,height_in);
 
-        //Core.addBasketballPlayer(br);
         Core.addBasketballPlayer(br);
 
-
         this.finish();
-        //Intent i = new Intent(this,MainActivity.class);
-        //this.startActivity(i);
+
 
     }
 

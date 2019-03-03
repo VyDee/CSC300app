@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
 
 
     private ListView lv;
-    private BasketballPlayerAdapter aa;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,15 +33,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.aa = new BasketballPlayerAdapter(this, R.layout.list_view_row_advanced,
+        Core.aa = new BasketballPlayerAdapter(this, R.layout.list_view_row_advanced,
                 Core.basketballPlayer);
         this.lv = (ListView)this.findViewById(R.id.listView);
-        this.lv.setAdapter(aa);
+        this.lv.setAdapter(Core.aa);
 
         //Start Listening for changes to the database
         Core.listenForDatabaseChanges(); // non-blocking!!!
-
-
 
     }
 
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity
 
         super.onRestart();
         System.out.println("OnRESTART");
-        this.aa.notifyDataSetChanged();
+        Core.aa.notifyDataSetChanged();
 
     }
     public void onAddPlayerPressed(View v)
@@ -66,13 +64,5 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this,BasketballRecordAddNewActivity.class);
         this.startActivity(i);
     }
-
-
-
-
-
-
-
-
 
 }

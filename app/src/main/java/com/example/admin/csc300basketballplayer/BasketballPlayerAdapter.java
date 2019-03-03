@@ -17,6 +17,7 @@ public class BasketballPlayerAdapter extends ArrayAdapter
 
     public BasketballPlayerAdapter(Context context, int textViewResourceId, BasketballRecord[] list)
     {
+        //call my parent's constructor - MUST BE FIRST LINE
         super(context,textViewResourceId,list);
         this.mContext = context;
         this.basketballRecordList = list;
@@ -32,7 +33,8 @@ public class BasketballPlayerAdapter extends ArrayAdapter
         View listItem = convertView;
         if (listItem == null)
         {
-            listItem = LayoutInflater.from(mContext).inflate(this.textViewResourceId, parent,false);
+            listItem = LayoutInflater.from(mContext).
+                    inflate(this.textViewResourceId, parent,false);
         }
 
         // get the BasketballRecord object from bucket position which
@@ -59,15 +61,3 @@ public class BasketballPlayerAdapter extends ArrayAdapter
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
