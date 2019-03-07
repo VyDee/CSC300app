@@ -12,7 +12,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Core
 {
-    public static BasketballRecord[] basketballPlayer = new BasketballRecord[1000];
+    public static BasketballRecord[] basketballPlayer = new BasketballRecord[0];
     public static String[] playerName = new String[1000];
     private static int numberOfPlayer = 0;
 
@@ -25,6 +25,7 @@ public class Core
         //async listener
         ValueEventListener prListener = new ValueEventListener() {
             @Override
+
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
                 //Get Post object and use the values to update the UI
@@ -39,7 +40,7 @@ public class Core
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     BasketballRecord br = ds.getValue(BasketballRecord.class);
-                    System.out.println("***** Data Changed");
+                    //System.out.println("***** Data Changed");
                     Core.addBasketballPlayerLocal(br);
 
 

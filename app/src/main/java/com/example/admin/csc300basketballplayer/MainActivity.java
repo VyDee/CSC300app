@@ -24,10 +24,16 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        System.out.println("*** Linked List Test");
+        LinkedList ll = new LinkedList();
+        ll.addEnd(7);
+        ll.addEnd(2);
+        ll.display();
+
         // initializes the array of Strings so there are place holder strings in there
         for (int i = 0; i < Core.basketballPlayer.length; i++)
         {
-            Core.basketballPlayer[i] = new BasketballRecord();
+           // Core.basketballPlayer[i] = new BasketballRecord();
         }
 
         super.onCreate(savedInstanceState);
