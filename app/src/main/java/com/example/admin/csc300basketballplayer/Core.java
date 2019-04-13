@@ -15,10 +15,16 @@ public class Core
     public static BasketballRecord[] basketballPlayer = new BasketballRecord[0];
     public static String[] playerName = new String[1000];
     private static int numberOfPlayer = 0;
+    private static FirebaseDatabase database;
+    public static DatabaseReference myRef;
 
-    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    public static DatabaseReference myRef = database.getReference("players");
     public static BasketballPlayerAdapter aa;
+
+    public static void initializeDatabase()
+    {
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("players");
+    }
 
     public static void listenForDatabaseChanges()
     {

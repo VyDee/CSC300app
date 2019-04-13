@@ -1,3 +1,5 @@
+
+
 package com.example.admin.csc300basketballplayer;
 
 public class Node
@@ -11,6 +13,7 @@ public class Node
         this.nextNode = null;
     }
 
+    //field
     public void setNextNode(Node nextNode)
     {
         this.nextNode = nextNode;

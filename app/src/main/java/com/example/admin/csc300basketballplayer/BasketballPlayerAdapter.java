@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class BasketballPlayerAdapter extends ArrayAdapter
+public class
+
+BasketballPlayerAdapter extends ArrayAdapter
 {
     private Context mContext;
     private BasketballRecord[] basketballRecordList = new BasketballRecord[1000];

@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity
         this.lv.setAdapter(Core.aa);
 
         //Start Listening for changes to the database
+        FirebaseApp.initializeApp(this);
+        Core.initializeDatabase();
         Core.listenForDatabaseChanges(); // non-blocking!!!
 
     }
